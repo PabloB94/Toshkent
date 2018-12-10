@@ -2,156 +2,414 @@ package interfaz;
 
 import metro.AEstrella;
 import metro.ListaParadas;
-import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.JScrollPane;
-import java.awt.Font;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import javax.swing.plaf.basic.BasicSplitPaneDivider;
+import javax.swing.plaf.basic.BasicSplitPaneUI;
+import java.awt.*;
+import java.awt.event.*;
+import java.time.chrono.JapaneseChronology;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Flow;
 
 public class CalcularViaje {
 
-	protected JFrame frameSeleccion;
-	private JPanel contentSeleccion;
-	private AEstrella servicios;
-	private Viaje ruta;
-	private ListaParadas construccion;
-	protected String origen;
-	protected String destino;
-	private List<String> estaciones;
-	private JList<String> listaOrigen;
-	private JList<String> listaDestino;
+    private MenuInicio initmenuui;
+    private JFrame calctripframe;
+    private AEstrella servicios;
+    private Viaje tripui;
+    private String origen;
+    private String destino;
+    private JList<String> stations;
+    private final ArrayList<String> sortedstations = ListaParadas.estacionesOrdenadas();
 
+    private final String WINDOW_TITTLE_TXT = "Toshkent Metro — Tashkent";
+    private final String _H = "<html>";
+    private final String H_ = "</html>";
 
-	public CalcularViaje(MenuInicio seleccion2) {
-		frameSeleccion = new JFrame();
-		construccion = new ListaParadas();
-		servicios = new AEstrella();
-		ruta = new Viaje(this,servicios);
-		origen = "";
-		destino = "";
-		initialize();
-	}
+    public CalcularViaje(MenuInicio initmenuui) {
+        this.initmenuui = initmenuui;
+        this.calctripframe = new JFrame();
+        this.servicios = new AEstrella();
+        this.tripui = new Viaje(this, servicios);
+        this.origen = "";
+        this.destino = "";
+        initialize();
+    }
 
-	public Viaje getRuta(){
-		return ruta;
-	}
+    private void initialize() {
+        LookAndFeel currlaf = UIManager.getLookAndFeel();
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e1) {
+            // If Nimbus is not available, sets the GUI to another look and feel.
+            try {
+                UIManager.setLookAndFeel(currlaf.getName());
+            } catch (Exception e2) {
+                e1.printStackTrace();
+                e2.printStackTrace();
+            }
+        }
 
-	private void initialize() {
-		
-		frameSeleccion.pack();
-		frameSeleccion.setSize(900,600);//Tamano de la ventana
-		frameSeleccion.setLocationRelativeTo(null);// Centrar en pantalla
-		frameSeleccion.setResizable(false);//Para no poder cambiar tamano ventana
-		frameSeleccion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// Para cerrar correctamente		
-		frameSeleccion.setTitle("Metro Tashkent");//Titulo Ventana		
-		frameSeleccion.setIconImage(new ImageIcon(getClass().getResource("/images/Logo.png")).getImage());//Icono app
-		
-		contentSeleccion = new JPanel();
-		contentSeleccion.setBorder(new EmptyBorder(100, 100, 980, 514));
-		contentSeleccion.setLayout(null);
+        //
+        // Window
+        //
+        calctripframe.pack();
+        calctripframe.setFocusable(true);
+        calctripframe.setPreferredSize(new Dimension(780, 580));
+        calctripframe.setSize(calctripframe.getPreferredSize()); // Tamano de la ventana
+        calctripframe.setLocationRelativeTo(null); // Centrar en pantalla
+        calctripframe.setResizable(false); // Para no poder cambiar tamano ventana
+        calctripframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Para cerrar correctamente
+        calctripframe.setTitle(WINDOW_TITTLE_TXT); // Titulo Ventana
+        calctripframe.setIconImage(new ImageIcon(getClass().getResource("/images/Logo.png")).getImage()); // Icono app
 
-		JButton btnAtrasMapa = new JButton("Atr�s");
+        calctripframe.getContentPane().setPreferredSize(calctripframe.getPreferredSize());
+        calctripframe.getContentPane().setSize(calctripframe.getContentPane().getPreferredSize());
+        calctripframe.getContentPane().setLayout(null);
 
-		btnAtrasMapa.setBounds(430, 20, 90, 30);
-		contentSeleccion.add(btnAtrasMapa);
-		btnAtrasMapa.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				frameSeleccion.setVisible(false);
-				if (frameSeleccion.isVisible())
-					frameSeleccion.setVisible(true);
-			}
-		});
+        //
+        // Components
+        //
 
-		JLabel labelOrigen = new JLabel("Estacion Inicial");
-		labelOrigen.setForeground(Color.black);
-		labelOrigen.setFont(new Font("ARIAL", Font.CENTER_BASELINE, 20));
-		labelOrigen.setBounds(200, 68, 150, 21);
-		labelOrigen.setHorizontalAlignment(SwingConstants.CENTER);
-		frameSeleccion.getContentPane().add(labelOrigen);
+        //
+        // Body Panel
+        //
+        JSplitPane bodysplitpane = new JSplitPane();
+        calctripframe.getContentPane().add(bodysplitpane);
+        bodysplitpane.setLocation(0, 0);
+        bodysplitpane.setOpaque(false);
+        bodysplitpane.setPreferredSize(bodysplitpane.getParent().getPreferredSize());
+        bodysplitpane.setSize(bodysplitpane.getPreferredSize());
+        bodysplitpane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+        bodysplitpane.setDividerLocation(0.08);
+        bodysplitpane.setOneTouchExpandable(false);
+        bodysplitpane.setContinuousLayout(true);
 
+        BasicSplitPaneUI ui1 = (BasicSplitPaneUI) bodysplitpane.getUI();
+        BasicSplitPaneDivider divider1 = ui1.getDivider();
+        divider1.setVisible(false);
 
-		JScrollPane scrollPaneOrigen = new JScrollPane();
-		scrollPaneOrigen.setBounds(200,100,150,310);
-		frameSeleccion.getContentPane().add(scrollPaneOrigen);
+        //
+        // Top panel
+        //
+        JPanel toppanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        bodysplitpane.setTopComponent(toppanel);
+        toppanel.setPreferredSize(new Dimension(toppanel.getParent().getWidth(), (int) (toppanel.getParent().getHeight() * 0.08)));
+        toppanel.setSize(toppanel.getPreferredSize());
+        toppanel.setPreferredSize(toppanel.getSize());
+        toppanel.setOpaque(false);
 
-		DefaultListModel<String>listaOrigenD = new DefaultListModel<String>();
-		final DefaultListModel<String>listaDestinoD = new DefaultListModel<String>();
+        //
+        // Home button
+        //
+        JButton homebtn = new JButton("");
+        toppanel.add(homebtn);
+        homebtn.setHorizontalTextPosition(JButton.CENTER);
+        homebtn.setOpaque(false);
+        homebtn.setBorderPainted(false);
+        homebtn.setFocusPainted(false);
+        homebtn.setContentAreaFilled(false);
+        homebtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                calctripframe.setVisible(false);
+                initmenuui.initmenuframe.setVisible(true);
+            }
 
-		listaOrigen = new JList<String>(listaOrigenD);
-		scrollPaneOrigen.setViewportView(listaOrigen);
-		estaciones = new ArrayList<String>();
-		estaciones = construccion.estacionesOrdenadas();
-		final int longitud = estaciones.size();
-		for(int i = 0; i < longitud ; ++i){
-			listaOrigenD.addElement(estaciones.get(i));
-		}
-		listaOrigen.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				origen = listaOrigen.getSelectedValue().toString();
-				listaDestinoD.clear();
-				estaciones = construccion.estacionesOrdenadas();
-				estaciones.remove(listaOrigen.getSelectedValue());
-				final int longitud = estaciones.size();
-				for(int i = 0; i < longitud ; ++i){
-					listaDestinoD.addElement(estaciones.get(i));
-				}
-			}
-		});
+            Cursor c = null;
 
-		JLabel labelDestino = new JLabel("Estacion Final");
-		labelDestino.setForeground(Color.black);
-		labelDestino.setFont(new Font("ARIAL", Font.CENTER_BASELINE, 20));
-		labelDestino.setBounds(550, 68, 150, 21);
-		labelDestino.setHorizontalAlignment(SwingConstants.CENTER);
-		frameSeleccion.getContentPane().add(labelDestino);
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                JButton btn = (JButton) e.getSource();
+                c = btn.getCursor();
+                btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
 
-		JScrollPane scrollPaneDestino = new JScrollPane();
-		scrollPaneDestino.setBounds(550,100,150,310); 
-		frameSeleccion.getContentPane().add(scrollPaneDestino);
+            @Override
+            public void mouseExited(MouseEvent e) {
+                JButton btn = (JButton) e.getSource();
+                btn.setCursor(c);
+            }
+        });
 
-		listaDestino = new JList<String>(listaDestinoD);
-		listaDestino.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				destino = listaDestino.getSelectedValue().toString();
-			}
-		});
-		scrollPaneDestino.setViewportView(listaDestino);
+        try {
+            Image img = ImageIO.read(getClass().getResource("/images/web-page-home.png"));
+            homebtn.setIcon(new ImageIcon(img));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-		JButton buttonSig = new JButton("SIGUIENTE");
-		buttonSig.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				if((!origen.equals(""))&&((!destino.equals("")))){
-					ruta.hacerRecorrido();
-					frameSeleccion.setVisible(false);
-					ruta.frameTrayecto.setVisible(true);
-				}
-			}
-		});
+        //
+        // Botton panel
+        //
+        JSplitPane bottonsplitpane = new JSplitPane();
+        bodysplitpane.setBottomComponent(bottonsplitpane);
+        bottonsplitpane.setLocation(0, 0);
+        bottonsplitpane.setOpaque(false);
+        bottonsplitpane.setSize(bodysplitpane.getWidth(), (int) (bodysplitpane.getHeight() * 0.92));
+        bottonsplitpane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+        bottonsplitpane.setDividerLocation(0.75);
+        bottonsplitpane.setOneTouchExpandable(false);
+        bottonsplitpane.setContinuousLayout(true);
 
-		buttonSig.setFont(new Font("Arial", Font.BOLD, 12));
-		buttonSig.setBounds(400, 420, 100, 30);					// boton ver mapa
-		frameSeleccion.getContentPane().add(buttonSig);
+        BasicSplitPaneUI ui2 = (BasicSplitPaneUI) bottonsplitpane.getUI();
+        BasicSplitPaneDivider divider2 = ui2.getDivider();
+        divider2.setVisible(false);
 
+        //
+        // Groups Container
+        //
+        JPanel groupscontainer = new JPanel();
+        bottonsplitpane.setTopComponent(groupscontainer);
+        groupscontainer.setPreferredSize(new Dimension(bottonsplitpane.getWidth(), (int) (bottonsplitpane.getHeight() * 0.75)));
+        groupscontainer.setSize(groupscontainer.getPreferredSize());
+        groupscontainer.setOpaque(false);
 
-		JLabel ImagenFondo = new JLabel("");
-		ImagenFondo.setIcon(new ImageIcon(CalcularViaje.class.getResource("/images/Viaje.jpg")));
-		ImagenFondo.setBounds(0, 0, 798, 556);
-		frameSeleccion.getContentPane().add(ImagenFondo);
+        GroupLayout gl = new GroupLayout(groupscontainer);
+        groupscontainer.setLayout(gl);
 
-	}
+        gl.setAutoCreateGaps(true);
+        gl.setAutoCreateContainerGaps(true);
+
+        //
+        // Scroll Panes JLabels
+        //
+        JLabel originjlabel = new JLabel("Origen");
+        originjlabel.setOpaque(false);
+        originjlabel.setForeground(new Color(0, 0, 0));
+        originjlabel.setFont(new Font("ARIAL", Font.CENTER_BASELINE, 20));
+        originjlabel.setHorizontalTextPosition(SwingConstants.CENTER);
+        originjlabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        JLabel destinationjlabel = new JLabel("Destino");
+        destinationjlabel.setOpaque(false);
+        destinationjlabel.setForeground(new Color(0, 0, 0));
+        destinationjlabel.setFont(new Font("ARIAL", Font.CENTER_BASELINE, 20));
+        destinationjlabel.setHorizontalTextPosition(SwingConstants.CENTER);
+        destinationjlabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+        //
+        // Scroll Panes
+        //
+        ArrayList<String> stations = ListaParadas.estacionesOrdenadas();
+        final int longitud = stations.size();
+
+        // SP1
+        JScrollPane originscrollpane = new JScrollPane();
+        originscrollpane.setOpaque(false);
+
+        DefaultListModel<String> origindlm = new DefaultListModel<String>();
+        JList<String> originlist = new JList<String>(origindlm);
+        originscrollpane.setViewportView(originlist);
+
+        for (int i = 0; i < longitud; ++i) {
+            origindlm.addElement(stations.get(i));
+        }
+
+        originlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        originlist.setSelectedIndex(0);
+
+        // SP2
+        JScrollPane destinationscrollpane = new JScrollPane();
+        destinationscrollpane.setOpaque(false);
+
+        DefaultListModel<String> destiantiondlm = new DefaultListModel<String>();
+        JList<String> destinationlist = new JList<String>(destiantiondlm);
+        destinationscrollpane.setViewportView(destinationlist);
+
+        for (int i = 0; i < longitud; ++i) {
+            destiantiondlm.addElement(stations.get(i));
+        }
+
+        destinationlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        destinationlist.setSelectedIndex(0);
+
+        // Groups Layout
+        // H1  H2
+        // jl1 jl2 V1
+        // sp1 sp2 V2
+        gl.setHorizontalGroup(
+                gl.createSequentialGroup()
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+                                (int) (bottonsplitpane.getWidth() * 0.165),
+                                (int) (bottonsplitpane.getWidth() * 0.165))
+                        .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                .addComponent(originjlabel)
+                                .addComponent(originscrollpane)
+                        )
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE + 30)
+                        .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                .addComponent(destinationjlabel)
+                                .addComponent(destinationscrollpane)
+                        )
+        );
+        gl.setVerticalGroup(
+                gl.createSequentialGroup()
+                        .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                .addComponent(originjlabel)
+                                .addComponent(destinationjlabel)
+                        )
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(gl.createParallelGroup(GroupLayout.Alignment.CENTER)
+                                .addComponent(originscrollpane)
+                                .addComponent(destinationscrollpane)
+                        ).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+        );
+
+        gl.linkSize(SwingConstants.HORIZONTAL, originjlabel, destinationjlabel);
+        gl.linkSize(SwingConstants.HORIZONTAL, originscrollpane, destinationscrollpane);
+        gl.linkSize(SwingConstants.HORIZONTAL, originjlabel, originscrollpane);
+        gl.linkSize(SwingConstants.HORIZONTAL, destinationjlabel, destinationscrollpane);
+
+        //
+        // Next Button Panel
+        //
+        JPanel nextbtnpanel = new JPanel();
+        bottonsplitpane.setBottomComponent(nextbtnpanel);
+        nextbtnpanel.setSize(bottonsplitpane.getWidth(), (int) (bottonsplitpane.getHeight() * 0.25));
+        nextbtnpanel.setPreferredSize(nextbtnpanel.getSize());
+        nextbtnpanel.setOpaque(false);
+
+        //
+        // Next Button
+        //
+        JButton nextbtn = new JButton("Siguiente");
+        nextbtnpanel.add(nextbtn);
+        nextbtn.setOpaque(false);
+        nextbtn.setEnabled(false);
+        nextbtn.setSize(300, 200);
+        nextbtn.setMargin(new Insets(10, 15, 10, 15));
+        nextbtn.setHorizontalTextPosition(JButton.CENTER);
+        nextbtn.setFont(new Font("Arial", Font.BOLD, 15));
+        nextbtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                calctripframe.setVisible(false);
+                tripui.getFrameTrayecto().setVisible(true);
+            }
+
+            Cursor c = null;
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                JButton btn = (JButton) e.getSource();
+                c = btn.getCursor();
+                btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                JButton btn = (JButton) e.getSource();
+                btn.setCursor(c);
+            }
+        });
+
+        //
+        // Trip Metro Image JLabel
+        //
+        JLabel tripimgjl = new JLabel("");
+        calctripframe.getContentPane().add(tripimgjl);
+        tripimgjl.setLocation(0, 0);
+        tripimgjl.setSize(calctripframe.getContentPane().getWidth(), calctripframe.getContentPane().getHeight());
+        tripimgjl.setHorizontalAlignment(SwingConstants.CENTER);
+
+        ImageIcon imgicon = new ImageIcon(Mapa.class.getResource("/images/Viaje.jpg"));
+        tripimgjl.setIcon(imgicon);
+
+        //
+        // Events
+        //
+        originlist.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                origen = originlist.getSelectedValue();
+                nextbtn.setEnabled(!origen.equals("") && !destino.equals("")
+                        && !origen.equals(destino));
+            }
+        });
+
+        originlist.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (originlist.hasFocus()
+                        && e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    origen = originlist.getSelectedValue();
+                    nextbtn.setEnabled(!origen.equals("") && !destino.equals("") && !origen.equals(destino));
+                }
+            }
+        });
+
+        destinationlist.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                destino = destinationlist.getSelectedValue();
+                nextbtn.setEnabled(!origen.equals("") && !destino.equals("")
+                        && !origen.equals(destino));
+            }
+        });
+
+        destinationlist.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if (destinationlist.hasFocus()
+                        && e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    destino = destinationlist.getSelectedValue();
+                    nextbtn.setEnabled(!origen.equals("") && !destino.equals("") && !origen.equals(destino));
+                }
+            }
+        });
+
+        origen = originlist.getSelectedValue();
+        destino = destinationlist.getSelectedValue();
+    }
+
+    public MenuInicio getInitmenuui() {
+        return initmenuui;
+    }
+
+    public JFrame getCalctripframe() {
+        return calctripframe;
+    }
+
+    public AEstrella getServicios() {
+        return servicios;
+    }
+
+    public Viaje getTripui() {
+        return tripui;
+    }
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public JList<String> getStations() {
+        return stations;
+    }
+
+    public void setInitmenuui(MenuInicio initmenuui) {
+        this.initmenuui = initmenuui;
+    }
+
+    public void setOrigen(String origen) {
+        this.origen = origen;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
 }
