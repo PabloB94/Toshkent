@@ -22,7 +22,7 @@ public class AEstrella
 
 	private void agregarEnAbierta(int linea, Estacion padre, String hijo)
 	{
-		Estacion estacionHijo = this.construcciones.getLineas()[linea-1].get(hijo);
+		Estacion estacionHijo = ListaParadas.getLineas()[linea-1].get(hijo);
 		if(!this.cerrada.contains(estacionHijo))
 		{
 			double pesoDesdePadre = padre.getPesoRecorrido();
