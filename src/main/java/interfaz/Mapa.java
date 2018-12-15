@@ -23,7 +23,7 @@ public class Mapa {
     private final String H_ = "</html>";
 
     public Mapa(MenuInicio initmenuui, AEstrella servicios) {
-        mapuiframe = new JFrame();
+        this.mapuiframe = new JFrame();
         this.initmenuui = initmenuui;
         inicialize();
     }

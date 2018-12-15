@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class ListaParadas {
 
+    public static String[] LINENAMES = {"Uzbekistan", "Chilonzor", "Yunusabad"};
     private static HashMap<String, Estacion> LUzbekistan, LChilonzor, LYunusabad;
 
     static {
