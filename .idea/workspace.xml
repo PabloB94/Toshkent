@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0af9feca-4019-4b7f-ad28-20aeba97de9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/images/TashkMetro.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/images/metro.jpg" beforeDir="false" />
+    <list default="true" id="1d2ec916-3a71-4851-969b-5026e8d8973b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Toshkent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/images/TashkenMetro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/images/Viaje.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/CalcularViaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/Viaje$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/Viaje$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/Viaje$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/Viaje$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/interfaz/Viaje.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/interfaz/Viaje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/metro/AEstrella.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/metro/AEstrella.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/main/metro/ListaParadas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/main/metro/ListaParadas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/images/TashkenMetro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/images/Viaje.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/images/Viaje.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/interfaz/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaz/Mapa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/interfaz/Viaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaz/Viaje.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/metro/AEstrella.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metro/AEstrella.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/metro/Coordenada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metro/Coordenada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/metro/ListaParadas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/metro/ListaParadas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,29 +39,45 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="112" column="37" lean-forward="true" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
+            <state relative-caret-position="284">
+              <caret line="412" column="42" selection-start-line="412" selection-start-column="42" selection-end-line="412" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#10045#10220#0" expanded="true" />
-                <element signature="e#10219#10220#0" expanded="true" />
-                <element signature="e#11109#11275#0" expanded="true" />
-                <element signature="e#11274#11275#0" expanded="true" />
-                <element signature="e#10097#10098#0" expanded="true" />
-                <element signature="e#10133#10134#0" expanded="true" />
-                <element signature="e#10176#10177#0" expanded="true" />
-                <element signature="e#10208#10209#0" expanded="true" />
-                <element signature="e#10243#10244#0" expanded="true" />
-                <element signature="e#10271#10272#0" expanded="true" />
-                <element signature="e#10301#10302#0" expanded="true" />
-                <element signature="e#10329#10330#0" expanded="true" />
-                <element signature="e#10362#10363#0" expanded="true" />
-                <element signature="e#10391#10392#0" expanded="true" />
-                <element signature="e#10425#10426#0" expanded="true" />
-                <element signature="e#10455#10456#0" expanded="true" />
+                <element signature="e#15490#15491#0" expanded="true" />
+                <element signature="e#15528#15529#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/Viaje.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="201" column="67" selection-start-line="201" selection-start-column="67" selection-end-line="201" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="jrt:///usr/lib/jvm/java-1.10.0-openjdk-amd64!/java.base/java/util/Arrays.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19890">
+              <caret line="1326" selection-start-line="1326" selection-end-line="1326" />
             </state>
           </provider>
         </entry>
@@ -52,76 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/Mapa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="99" column="40" lean-forward="true" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6236#6463#0" expanded="true" />
-                <element signature="e#6462#6463#0" expanded="true" />
-                <element signature="e#6003#6004#0" expanded="true" />
-                <element signature="e#6036#6037#0" expanded="true" />
-                <element signature="e#6077#6078#0" expanded="true" />
-                <element signature="e#6110#6111#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="403" column="54" selection-start-line="403" selection-start-column="54" selection-end-line="403" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#7859#7867#0" expanded="true" />
-                <element signature="e#7920#7928#0" expanded="true" />
-                <element signature="e#8351#8359#0" expanded="true" />
-                <element signature="e#8495#8503#0" expanded="true" />
-                <element signature="e#13993#14298#0" expanded="true" />
-                <element signature="e#14297#14298#0" expanded="true" />
-                <element signature="e#14336#14781#0" expanded="true" />
-                <element signature="e#14780#14781#0" expanded="true" />
-                <element signature="e#14887#15198#0" expanded="true" />
-                <element signature="e#15197#15198#0" expanded="true" />
-                <element signature="e#15180#15636#0" expanded="true" />
-                <element signature="e#15635#15636#0" expanded="true" />
-                <element signature="e#14814#14815#0" expanded="true" />
-                <element signature="e#14847#14848#0" expanded="true" />
-                <element signature="e#14887#14888#0" expanded="true" />
-                <element signature="e#14923#14924#0" expanded="true" />
-                <element signature="e#14962#14963#0" expanded="true" />
-                <element signature="e#14994#14995#0" expanded="true" />
-                <element signature="e#15026#15027#0" expanded="true" />
-                <element signature="e#15055#15056#0" expanded="true" />
-                <element signature="e#15088#15089#0" expanded="true" />
-                <element signature="e#15117#15118#0" expanded="true" />
-                <element signature="e#15151#15152#0" expanded="true" />
-                <element signature="e#15181#15182#0" expanded="true" />
-                <element signature="e#15223#15224#0" expanded="true" />
-                <element signature="e#15254#15255#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/Viaje.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
-              <folding>
-                <element signature="e#9936#9937#0" expanded="true" />
-                <element signature="e#9972#9973#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/metro/ListaParadas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="299">
+              <caret line="176" column="1" lean-forward="true" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,9 +98,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logo</find>
-      <find>Logo.png</find>
+      <find>&lt;br&gt;</find>
     </findStrings>
+    <replaceStrings>
+      <replace>\n</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -144,17 +111,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/metro/ListaParadas.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metro/AEstrella.java" />
+        <option value="$PROJECT_DIR$/src/main/java/metro/Coordenada.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaz/Mapa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java" />
-        <option value="$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java" />
         <option value="$PROJECT_DIR$/src/main/java/interfaz/Viaje.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1366" />
-    <option name="height" value="721" />
+    <option name="y" value="27" />
+    <option name="width" value="1356" />
+    <option name="height" value="717" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -162,8 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,12 +142,6 @@
               <item name="Toshkent" type="b2602c69:ProjectViewProjectNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Toshkent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Toshkent" type="b2602c69:ProjectViewProjectNode" />
@@ -198,19 +159,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RunDashboard">
@@ -250,49 +207,41 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0af9feca-4019-4b7f-ad28-20aeba97de9e" name="Default Changelist" comment="" />
-      <created>1544027302677</created>
+      <changelist id="1d2ec916-3a71-4851-969b-5026e8d8973b" name="Default Changelist" comment="" />
+      <created>1544752320214</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1544027302677</updated>
-      <workItem from="1544027317688" duration="155527000" />
+      <updated>1544752320214</updated>
+      <workItem from="1544752323470" duration="36860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155527000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="36860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="721" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info id="Designer" order="1" />
-      <window_info id="Learn" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49747476" visible="true" weight="0.25" />
-      <window_info id="Structure" order="4" sideWeight="0.50252527" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Learn" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32881355" />
+      <window_info anchor="bottom" id="Messages" weight="0.32881355" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5007576" side_tool="true" weight="0.32881355" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32881355" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.32881355" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35084745" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32881355" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Database" />
@@ -305,125 +254,80 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/images/TashkenMetro.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.10.0-openjdk-amd64!/java.desktop/javax/swing/GroupLayout.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="1098" column="13" selection-start-line="1098" selection-start-column="13" selection-end-line="1098" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/metro/AEstrella.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        <state relative-caret-position="299">
+          <caret line="99" column="1" lean-forward="true" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jrt:///usr/lib/jvm/java-1.10.0-openjdk-amd64!/java.desktop/javax/swing/JSplitPane.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/metro/Coordenada.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/metro/Estacion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="298" column="26" selection-start-line="298" selection-start-column="26" selection-end-line="298" selection-end-column="26" />
+        <state relative-caret-position="299">
+          <caret line="119" column="1" lean-forward="true" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+          <folding>
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1866#1867#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/metro/ListaParadas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="21" column="77" lean-forward="true" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/Mapa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="99" column="40" lean-forward="true" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
+        <state relative-caret-position="299">
+          <caret line="176" column="1" lean-forward="true" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6236#6463#0" expanded="true" />
-            <element signature="e#6462#6463#0" expanded="true" />
-            <element signature="e#6003#6004#0" expanded="true" />
-            <element signature="e#6036#6037#0" expanded="true" />
-            <element signature="e#6077#6078#0" expanded="true" />
-            <element signature="e#6110#6111#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="112" column="37" lean-forward="true" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10045#10220#0" expanded="true" />
-            <element signature="e#10219#10220#0" expanded="true" />
-            <element signature="e#11109#11275#0" expanded="true" />
-            <element signature="e#11274#11275#0" expanded="true" />
-            <element signature="e#10097#10098#0" expanded="true" />
-            <element signature="e#10133#10134#0" expanded="true" />
-            <element signature="e#10176#10177#0" expanded="true" />
-            <element signature="e#10208#10209#0" expanded="true" />
-            <element signature="e#10243#10244#0" expanded="true" />
-            <element signature="e#10271#10272#0" expanded="true" />
-            <element signature="e#10301#10302#0" expanded="true" />
-            <element signature="e#10329#10330#0" expanded="true" />
-            <element signature="e#10362#10363#0" expanded="true" />
-            <element signature="e#10391#10392#0" expanded="true" />
-            <element signature="e#10425#10426#0" expanded="true" />
-            <element signature="e#10455#10456#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="403" column="54" selection-start-line="403" selection-start-column="54" selection-end-line="403" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7859#7867#0" expanded="true" />
-            <element signature="e#7920#7928#0" expanded="true" />
-            <element signature="e#8351#8359#0" expanded="true" />
-            <element signature="e#8495#8503#0" expanded="true" />
-            <element signature="e#13993#14298#0" expanded="true" />
-            <element signature="e#14297#14298#0" expanded="true" />
-            <element signature="e#14336#14781#0" expanded="true" />
-            <element signature="e#14780#14781#0" expanded="true" />
-            <element signature="e#14887#15198#0" expanded="true" />
-            <element signature="e#15197#15198#0" expanded="true" />
-            <element signature="e#15180#15636#0" expanded="true" />
-            <element signature="e#15635#15636#0" expanded="true" />
-            <element signature="e#14814#14815#0" expanded="true" />
-            <element signature="e#14847#14848#0" expanded="true" />
-            <element signature="e#14887#14888#0" expanded="true" />
-            <element signature="e#14923#14924#0" expanded="true" />
-            <element signature="e#14962#14963#0" expanded="true" />
-            <element signature="e#14994#14995#0" expanded="true" />
-            <element signature="e#15026#15027#0" expanded="true" />
-            <element signature="e#15055#15056#0" expanded="true" />
-            <element signature="e#15088#15089#0" expanded="true" />
-            <element signature="e#15117#15118#0" expanded="true" />
-            <element signature="e#15151#15152#0" expanded="true" />
-            <element signature="e#15181#15182#0" expanded="true" />
-            <element signature="e#15223#15224#0" expanded="true" />
-            <element signature="e#15254#15255#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/Viaje.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="99" column="30" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+        <state relative-caret-position="15">
+          <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/CalcularViaje.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="412" column="42" selection-start-line="412" selection-start-column="42" selection-end-line="412" selection-end-column="42" />
           <folding>
-            <element signature="e#9936#9937#0" expanded="true" />
-            <element signature="e#9972#9973#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#15490#15491#0" expanded="true" />
+            <element signature="e#15528#15529#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaz/MenuInicio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="201" column="67" selection-start-line="201" selection-start-column="67" selection-end-line="201" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.10.0-openjdk-amd64!/java.base/java/util/Arrays.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19890">
+          <caret line="1326" selection-start-line="1326" selection-end-line="1326" />
         </state>
       </provider>
     </entry>

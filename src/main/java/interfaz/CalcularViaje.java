@@ -5,26 +5,22 @@ import metro.ListaParadas;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicSplitPaneDivider;
 import javax.swing.plaf.basic.BasicSplitPaneUI;
 import java.awt.*;
 import java.awt.event.*;
-import java.time.chrono.JapaneseChronology;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Flow;
 
 public class CalcularViaje {
 
     private MenuInicio initmenuui;
     private JFrame calctripframe;
-    private AEstrella servicios;
+    private AEstrella astar;
     private Viaje tripui;
     private String origen;
     private String destino;
-    private JList<String> stations;
-    private final ArrayList<String> sortedstations = ListaParadas.estacionesOrdenadas();
+    private JList<String> originlist;
+    private JList<String> destinationlist;
 
     private final String WINDOW_TITTLE_TXT = "Toshkent Metro — Tashkent";
     private final String _H = "<html>";
@@ -33,8 +29,8 @@ public class CalcularViaje {
     public CalcularViaje(MenuInicio initmenuui) {
         this.initmenuui = initmenuui;
         this.calctripframe = new JFrame();
-        this.servicios = new AEstrella();
-        this.tripui = new Viaje(this, servicios);
+        this.astar = new AEstrella();
+        this.tripui = new Viaje(initmenuui, this, astar);
         this.origen = "";
         this.destino = "";
         initialize();
@@ -105,7 +101,6 @@ public class CalcularViaje {
         bodysplitpane.setTopComponent(toppanel);
         toppanel.setPreferredSize(new Dimension(toppanel.getParent().getWidth(), (int) (toppanel.getParent().getHeight() * 0.08)));
         toppanel.setSize(toppanel.getPreferredSize());
-        toppanel.setPreferredSize(toppanel.getSize());
         toppanel.setOpaque(false);
 
         //
@@ -208,7 +203,7 @@ public class CalcularViaje {
         originscrollpane.setOpaque(false);
 
         DefaultListModel<String> origindlm = new DefaultListModel<String>();
-        JList<String> originlist = new JList<String>(origindlm);
+        originlist = new JList<String>(origindlm);
         originscrollpane.setViewportView(originlist);
 
         for (int i = 0; i < longitud; ++i) {
@@ -223,7 +218,7 @@ public class CalcularViaje {
         destinationscrollpane.setOpaque(false);
 
         DefaultListModel<String> destiantiondlm = new DefaultListModel<String>();
-        JList<String> destinationlist = new JList<String>(destiantiondlm);
+        destinationlist = new JList<String>(destiantiondlm);
         destinationscrollpane.setViewportView(destinationlist);
 
         for (int i = 0; i < longitud; ++i) {
@@ -295,7 +290,7 @@ public class CalcularViaje {
             @Override
             public void mouseClicked(MouseEvent e) {
                 calctripframe.setVisible(false);
-                tripui.getFrameTrayecto().setVisible(true);
+                tripui.getTripFrame().setVisible(true);
             }
 
             Cursor c = null;
@@ -369,8 +364,14 @@ public class CalcularViaje {
             }
         });
 
-        origen = originlist.getSelectedValue();
-        destino = destinationlist.getSelectedValue();
+
+        calctripframe.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentShown(ComponentEvent e) {
+                origen = originlist.getSelectedValue();
+                destino = destinationlist.getSelectedValue();
+            }
+        });
     }
 
     public MenuInicio getInitmenuui() {
@@ -381,8 +382,8 @@ public class CalcularViaje {
         return calctripframe;
     }
 
-    public AEstrella getServicios() {
-        return servicios;
+    public AEstrella getAstar() {
+        return astar;
     }
 
     public Viaje getTripui() {
@@ -397,10 +398,6 @@ public class CalcularViaje {
         return destino;
     }
 
-    public JList<String> getStations() {
-        return stations;
-    }
-
     public void setInitmenuui(MenuInicio initmenuui) {
         this.initmenuui = initmenuui;
     }
@@ -411,5 +408,13 @@ public class CalcularViaje {
 
     public void setDestino(String destino) {
         this.destino = destino;
+    }
+
+    public JList<String> getOriginlist() {
+        return originlist;
+    }
+
+    public JList<String> getDestinationlist() {
+        return destinationlist;
     }
 }

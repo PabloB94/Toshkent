@@ -20,7 +20,6 @@ public class MenuInicio {
     private String origen;
     private String destino;
 
-
     private final String WINDOW_TITTLE_TXT = "Toshkent Metro — Tashkent";
     private final String LABEL_TITTLE_TXT = "Toshkent Metro";
     private final String MAP_BTN_TXT = "<p style=\"text-align:center;\">Mapa de<br>Metro</p>";
@@ -135,7 +134,6 @@ public class MenuInicio {
         footpanel.setPreferredSize(new Dimension(bodypanel.getWidth(), bodypanel.getHeight() / 2));
         footpanel.setSize(footpanel.getPreferredSize());
         footpanel.setOpaque(false);
-        BoxLayout bl = new BoxLayout(footpanel, BoxLayout.PAGE_AXIS);
 
         //
         // Buttons Wrapper JPanel
@@ -191,8 +189,6 @@ public class MenuInicio {
         mapbtn.setOpaque(false);
         mapbtn.setHorizontalTextPosition(SwingConstants.CENTER);
         mapbtn.setVerticalTextPosition(SwingConstants.CENTER);
-        //ImageIcon mbii = new ImageIcon(getClass().getResource("/images/metroicon.png"));
-        //mapbtn.setIcon(mbii);
 
         //
         // Trip Button
@@ -202,6 +198,8 @@ public class MenuInicio {
         tripbtn.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                calcviaje.getOriginlist().setSelectedIndex(0);
+                calcviaje.getDestinationlist().setSelectedIndex(0);
                 calcviaje.getCalctripframe().setVisible(true);
                 initmenuframe.setVisible(false);
             }
